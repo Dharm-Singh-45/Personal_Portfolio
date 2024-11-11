@@ -8,7 +8,7 @@ export const addNewProject = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler("Project Banner Image Required"));
   }
   const { projectBanner } = req.files;
-  const { title, description, gitRepoLink, projectLink, stack, deployed } =
+  const { title, description, gitRepoLink, projectLink,technology, stack, deployed } =
     req.body;
   if (
     !title ||
@@ -16,6 +16,7 @@ export const addNewProject = catchAsyncError(async (req, res, next) => {
     !gitRepoLink ||
     !projectLink ||
     !stack ||
+    !technology||
     !deployed
   ) {
     return next(new ErrorHandler("Please Provide All Details"));
@@ -41,6 +42,7 @@ export const addNewProject = catchAsyncError(async (req, res, next) => {
     gitRepoLink,
     projectLink,
     stack,
+    technology,
     deployed,
     projectBanner: {
       public_id: cloudinaryResponse.public_id,
@@ -62,6 +64,7 @@ export const updateProject = catchAsyncError(async (req, res, next) => {
     projectLink:req.body.projectLink,
     stack:req.body.stack,
     deployed:req.body.deployed,
+    technology:req.body.technology
   };
   if (req.files && req.files.projectBanner) {
     const projectBanner = req.files.projectBanner;

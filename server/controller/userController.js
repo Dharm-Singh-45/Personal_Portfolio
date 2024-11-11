@@ -240,7 +240,7 @@ export const resetPassword = catchAsyncError(async (req, res, next) => {
       )
     );
   }
-  if (req.body.password !== req.body.confirmNewPassword) {
+  if (req.body.password !== req.body.confirmPassword) {
     return next(
       new ErrorHandler("Password and confirm password does not match")
     );
