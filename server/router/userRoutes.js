@@ -12,7 +12,7 @@ router.put('/update/me', isAuthenticated,updateProfile )
 router.put('/update/password', isAuthenticated,updatePassword )
 
 // portfolio access
-router.get('/me/portfolio',getUserForPortfolio )
+router.get('/portfolio/me',getUserForPortfolio )
 
 router.post('/password/forgot',forgotPassword )
 

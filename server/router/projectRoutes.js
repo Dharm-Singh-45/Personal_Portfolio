@@ -14,6 +14,6 @@ router.post("/add", addNewProject);
 router.get("/getAll", getAllProjects);
 router.delete("/delete/:id", isAuthenticated, deleteProject);
 router.put("/update/:id", isAuthenticated, updateProject);
-router.get("/get/:id", isAuthenticated, getSingleProject);
+router.get("/get/:id", getSingleProject);
 
 export default router;
