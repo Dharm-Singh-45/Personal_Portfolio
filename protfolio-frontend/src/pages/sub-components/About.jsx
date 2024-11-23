@@ -36,14 +36,29 @@ const About = () => {
         </div>
         <div className="flex justify-center flex-col tracking-[1px] text-xl gap-5">
           <p>
-            My name is Dharm Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Praesentium neque aliquid expedita necessitatibus, natus ea
-            sit aperiam nostrum quasi culpa.
+            Hello! I'm Dharm Singh, a Full Stack Developer with a passion for
+            creating dynamic and user-friendly web applications. My journey in
+            tech has been driven by my curiosity and love for solving problems.
+            I enjoy exploring new technologies and applying them to build
+            innovative solutions. My expertise lies in both frontend and backend
+            development, and I'm constantly looking to improve my skills and
+            take on new challenges.
           </p>
           <p>
             I have interest in coding Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Minus consequatur id nesciunt aut delectus nemo
-            magni reiciendis dicta quod eius?
+            Outside of coding, I’m an avid cricket player and enjoy staying
+            active. Traveling is one of my greatest passions – I love visiting
+            new places and experiencing different cultures. I believe that
+            exploring new environments helps me grow both personally and
+            professionally. It also fuels my creativity and keeps me motivated
+            to push boundaries in my work.
+          </p>
+          <p>
+            I’m always eager to learn and expand my horizons, both in the tech
+            world and in life. Whether it’s experimenting with new tools or
+            discovering new destinations, I’m always ready for the next
+            adventure. Thanks for taking the time to visit my portfolio – feel
+            free to reach out if you’d like to connect or collaborate!
           </p>
         </div>
 

@@ -7,7 +7,7 @@ import { generateToken } from "../utils/jwtToken.js";
 import { sendEmail } from "../utils/sendEmail.js";
 import crypto from "crypto";
 
-export const registerUser = catchAsyncError(async (req, res, next) => {
+ export const registerUser = catchAsyncError(async (req, res, next) => {
   if (!req.files || Object.keys(req.files).length === 0) {
     return next(new ErrorHandler("Avatar and resume are required", 400));
   }
@@ -68,7 +68,10 @@ export const registerUser = catchAsyncError(async (req, res, next) => {
     },
   });
   generateToken(user, "User Registered", 201, res);
-});
+}); 
+
+
+
 
 // login
 
@@ -87,11 +90,13 @@ export const login = catchAsyncError(async (req, res, next) => {
   }
   generateToken(user, "Logged In", 200, res);
 });
+
 // logout
 export const logout = catchAsyncError(async (req, res, next) => {
   res
     .status(200)
-    .cookie("token", "", { expires: new Date(Date.now()), httpOnly: true })
+    .cookie("token", "", { expires: new Date(Date.now()), httpOnly: true ,secure: true,
+      sameSite:"None" })
     .json({
       success: true,
       message: "Logged Out",
@@ -106,7 +111,7 @@ export const getUser = catchAsyncError(async (req, res, next) => {
   });
 });
 
-export const updateProfile = catchAsyncError(async (req, res, next) => {
+ export const updateProfile = catchAsyncError(async (req, res, next) => {
   const newUserData = {
     fullName: req.body.fullName,
     email: req.body.email,
@@ -161,6 +166,12 @@ export const updateProfile = catchAsyncError(async (req, res, next) => {
     user,
   });
 });
+ 
+
+
+
+
+
 
 export const updatePassword = catchAsyncError(async (req, res, next) => {
   const { currentPassword, newPassword, confirmNewPassword } = req.body;

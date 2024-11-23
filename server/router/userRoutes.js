@@ -11,6 +11,11 @@ router.get('/me', isAuthenticated,getUser )
 router.put('/update/me', isAuthenticated,updateProfile )
 router.put('/update/password', isAuthenticated,updatePassword )
 
+// awake backend 
+router.get('/wake-up', (req, res) => {
+    res.json({ message: 'Backend is awake' });
+  });
+
 // portfolio access
 router.get('/portfolio/me',getUserForPortfolio )
 

@@ -36,7 +36,7 @@ app.use(
 );
 
 app.use('/api/v1/message',messageRouter)
-app.use('/api/v1/user',userRouter)
+app.use('/api/v1/user',userRouter)   //also include backend wakeUp api
 
 app.use('/api/v1/timeline',timeLineRouter)
 app.use('/api/v1/softwareApplication',applicationRouter)
